@@ -6,9 +6,6 @@ mod data_row;
 static TRUE: [u8; 1] = [1];
 static FALSE: [u8; 1] = [0];
 
-#[global_allocator]
-static ALLOC: AllocProfiler = AllocProfiler::system();
-
 fn main() {
     // create_sample_data();
 

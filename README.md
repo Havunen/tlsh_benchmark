@@ -23,36 +23,9 @@ Timer precision: 20 ns
 
 ```
 tlsh_build_bench        fastest       │ slowest       │ median        │ mean          │ samples │ iters
-├─ build_fast_tlsh      17.02 ms      │ 20.34 ms      │ 17.18 ms      │ 17.33 ms      │ 100     │ 100
-│                       max alloc:    │               │               │               │         │
-│                         1           │ 1             │ 1             │ 1             │         │
-│                         480 KB      │ 480 KB        │ 480 KB        │ 480 KB        │         │
-│                       alloc:        │               │               │               │         │
-│                         1           │ 1             │ 1             │ 1             │         │
-│                         480 KB      │ 480 KB        │ 480 KB        │ 480 KB        │         │
-│                       dealloc:      │               │               │               │         │
-│                         1           │ 1             │ 1             │ 1             │         │
-│                         480 KB      │ 480 KB        │ 480 KB        │ 480 KB        │         │
-├─ build_simbiota_tlsh  64.05 ms      │ 65.82 ms      │ 64.72 ms      │ 64.77 ms      │ 100     │ 100
-│                       max alloc:    │               │               │               │         │
-│                         10002       │ 10002         │ 10002         │ 10002         │         │
-│                         941.3 KB    │ 941.3 KB      │ 941.3 KB      │ 941.3 KB      │         │
-│                       alloc:        │               │               │               │         │
-│                         30001       │ 30001         │ 30001         │ 30001         │         │
-│                         14.55 MB    │ 14.55 MB      │ 14.55 MB      │ 14.55 MB      │         │
-│                       dealloc:      │               │               │               │         │
-│                         30001       │ 30001         │ 30001         │ 30001         │         │
-│                         14.55 MB    │ 14.55 MB      │ 14.55 MB      │ 14.55 MB      │         │
-╰─ build_tlsh2          31.2 ms       │ 33.56 ms      │ 31.42 ms      │ 31.45 ms      │ 100     │ 100
-                        max alloc:    │               │               │               │         │
-                          1           │ 1             │ 1             │ 1             │         │
-                          720 KB      │ 720 KB        │ 720 KB        │ 720 KB        │         │
-                        alloc:        │               │               │               │         │
-                          1           │ 1             │ 1             │ 1             │         │
-                          720 KB      │ 720 KB        │ 720 KB        │ 720 KB        │         │
-                        dealloc:      │               │               │               │         │
-                          1           │ 1             │ 1             │ 1             │         │
-                          720 KB      │ 720 KB        │ 720 KB        │ 720 KB        │         │
+├─ build_fast_tlsh      17.06 ms      │ 22.49 ms      │ 17.17 ms      │ 17.49 ms      │ 100     │ 100
+├─ build_simbiota_tlsh  65.99 ms      │ 80.73 ms      │ 66.55 ms      │ 67.04 ms      │ 100     │ 100
+╰─ build_tlsh2          31.21 ms      │ 31.81 ms      │ 31.31 ms      │ 31.32 ms      │ 100     │ 100
 ```
 
 Running benches/tlsh_diff_bench.rs (target/release/deps/tlsh_diff_bench-f393e696b6c3e0e7)
@@ -60,35 +33,7 @@ Timer precision: 20 ns
 
 ```
 tlsh_diff_bench        fastest       │ slowest       │ median        │ mean          │ samples │ iters
-├─ diff_fast_tlsh      4.341 ms      │ 5.767 ms      │ 4.451 ms      │ 4.489 ms      │ 100     │ 100
-│                      max alloc:    │               │               │               │         │
-│                        1           │ 1             │ 1             │ 1             │         │
-│                        4 MB        │ 4 MB          │ 4 MB          │ 4 MB          │         │
-│                      alloc:        │               │               │               │         │
-│                        1           │ 1             │ 1             │ 1             │         │
-│                        4 MB        │ 4 MB          │ 4 MB          │ 4 MB          │         │
-│                      dealloc:      │               │               │               │         │
-│                        1           │ 1             │ 1             │ 1             │         │
-│                        4 MB        │ 4 MB          │ 4 MB          │ 4 MB          │         │
-├─ diff_simbiota_tlsh  13.9 ms       │ 15.8 ms       │ 13.96 ms      │ 14.05 ms      │ 100     │ 100
-│                      max alloc:    │               │               │               │         │
-│                        1           │ 1             │ 1             │ 1             │         │
-│                        4 MB        │ 4 MB          │ 4 MB          │ 4 MB          │         │
-│                      alloc:        │               │               │               │         │
-│                        1           │ 1             │ 1             │ 1             │         │
-│                        4 MB        │ 4 MB          │ 4 MB          │ 4 MB          │         │
-│                      dealloc:      │               │               │               │         │
-│                        1           │ 1             │ 1             │ 1             │         │
-│                        4 MB        │ 4 MB          │ 4 MB          │ 4 MB          │         │
-╰─ diff_tlsh2          17.36 ms      │ 17.9 ms       │ 17.79 ms      │ 17.73 ms      │ 100     │ 100
-                       max alloc:    │               │               │               │         │
-                         1           │ 1             │ 1             │ 1             │         │
-                         4 MB        │ 4 MB          │ 4 MB          │ 4 MB          │         │
-                       alloc:        │               │               │               │         │
-                         1           │ 1             │ 1             │ 1             │         │
-                         4 MB        │ 4 MB          │ 4 MB          │ 4 MB          │         │
-                       dealloc:      │               │               │               │         │
-                         1           │ 1             │ 1             │ 1             │         │
-                         4 MB        │ 4 MB          │ 4 MB          │ 4 MB          │         │
-
+├─ diff_fast_tlsh      4.459 ms      │ 5.219 ms      │ 4.539 ms      │ 4.552 ms      │ 100     │ 100
+├─ diff_simbiota_tlsh  13.84 ms      │ 14.3 ms       │ 13.88 ms      │ 13.89 ms      │ 100     │ 100
+╰─ diff_tlsh2          17.51 ms      │ 19.83 ms      │ 17.78 ms      │ 18 ms         │ 100     │ 100
 ```

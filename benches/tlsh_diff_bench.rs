@@ -12,9 +12,6 @@ static FALSE: [u8; 1] = [0];
 
 const NUM_OF_ROWS: usize = 1000;
 
-#[global_allocator]
-static ALLOC: AllocProfiler = AllocProfiler::system();
-
 fn main() {
     divan::main();
 }
