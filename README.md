@@ -10,7 +10,7 @@ For more information about TLSH goto: https://tlsh.org/
 ## Results
 
 Used system:
-```
+```bash
 Arch Linux 6.14.2-arch1-1 #1 SMP PREEMPT_DYNAMIC Thu, 10 Apr 2025 18:43:59 +0000 x86_64 GNU/Linux
 AMD Ryzen 9 5950X 16-Core Processor
 128GB RAM 3600Mhz
@@ -18,8 +18,10 @@ AMD Ryzen 9 5950X 16-Core Processor
 
 
 
-     Running benches/tlsh_build_bench.rs (target/release/deps/tlsh_build_bench-50750479aa4e76a9)
+Running benches/tlsh_build_bench.rs (target/release/deps/tlsh_build_bench-50750479aa4e76a9)
 Timer precision: 20 ns
+
+```
 tlsh_build_bench        fastest       │ slowest       │ median        │ mean          │ samples │ iters
 ├─ build_fast_tlsh      17.02 ms      │ 20.34 ms      │ 17.18 ms      │ 17.33 ms      │ 100     │ 100
 │                       max alloc:    │               │               │               │         │
@@ -51,9 +53,12 @@ tlsh_build_bench        fastest       │ slowest       │ median        │ me
                         dealloc:      │               │               │               │         │
                           1           │ 1             │ 1             │ 1             │         │
                           720 KB      │ 720 KB        │ 720 KB        │ 720 KB        │         │
+```
 
-     Running benches/tlsh_diff_bench.rs (target/release/deps/tlsh_diff_bench-f393e696b6c3e0e7)
+Running benches/tlsh_diff_bench.rs (target/release/deps/tlsh_diff_bench-f393e696b6c3e0e7)
 Timer precision: 20 ns
+
+```
 tlsh_diff_bench        fastest       │ slowest       │ median        │ mean          │ samples │ iters
 ├─ diff_fast_tlsh      4.341 ms      │ 5.767 ms      │ 4.451 ms      │ 4.489 ms      │ 100     │ 100
 │                      max alloc:    │               │               │               │         │
@@ -86,3 +91,4 @@ tlsh_diff_bench        fastest       │ slowest       │ median        │ mea
                          1           │ 1             │ 1             │ 1             │         │
                          4 MB        │ 4 MB          │ 4 MB          │ 4 MB          │         │
 
+```
