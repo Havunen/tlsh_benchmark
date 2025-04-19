@@ -1,0 +1,21 @@
+[package]
+name = "tlsh_benchmark"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+fastrand = "2.3.0"
+fake = { version = "4.3.0" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+#tlsh-fixed = "0.1.1"
+fast-tlsh = "0.1.8"
+tlsh2 = "0.4.0"
+#simbiota-tlsh = "1.1.1"
+divan = "0.1.21"
+
+[[bench]]
+name = "tlsh_build_bench"
+path = "benches/tlsh_build_bench.rs"
+harness = false
