@@ -481,6 +481,11 @@ dependencies = [
 ]
 
 [[package]]
+name = "tlsh"
+version = "0.1.0"
+source = "git+https://github.com/dkrisman/tlsh-rs?branch=main#2079d86b6a35bb399a60eb20df597c5c19a7952c"
+
+[[package]]
 name = "tlsh2"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -497,6 +502,7 @@ dependencies = [
  "serde",
  "serde_json",
  "simbiota-tlsh",
+ "tlsh",
  "tlsh2",
 ]
 

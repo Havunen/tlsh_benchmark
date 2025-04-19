@@ -15,6 +15,7 @@ divan = "0.1.21"
 fast-tlsh = "0.1.8"
 tlsh2 = { version = "0.4.0", features = ["diff", "fast"] }
 simbiota-tlsh = "1.1.1"
+tlsh_orig = { git = "https://github.com/dkrisman/tlsh-rs", branch = "main", package = "tlsh" }
 
 [[bench]]
 name = "tlsh_construct_bench"
