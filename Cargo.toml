@@ -17,8 +17,8 @@ tlsh2 = { version = "0.4.0", features = ["diff", "fast"] }
 simbiota-tlsh = "1.1.1"
 
 [[bench]]
-name = "tlsh_build_bench"
-path = "benches/tlsh_build_bench.rs"
+name = "tlsh_construct_bench"
+path = "benches/tlsh_construct_bench.rs"
 harness = false
 
 [[bench]]

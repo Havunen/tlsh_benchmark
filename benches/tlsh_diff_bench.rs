@@ -1,7 +1,7 @@
 use crate::data_row::prepare_data;
-use divan::{bench, black_box, AllocProfiler, Bencher};
+use divan::{bench, black_box, Bencher};
 use simbiota_tlsh::{TLSHBuilder, TLSH};
-use tlsh::{FuzzyHashType};
+use tlsh::FuzzyHashType;
 use tlsh2::TlshBuilder128_1;
 
 mod data_row;

@@ -1,5 +1,5 @@
 use crate::data_row::{prepare_data, DataRow};
-use divan::{bench, black_box, AllocProfiler, Bencher};
+use divan::{bench, black_box, Bencher};
 
 mod data_row;
 
@@ -56,7 +56,7 @@ fn hash_tlsh2(data_row: &DataRow) -> [u8; 72] {
 }
 
 #[bench]
-fn build_tlsh2(bencher: Bencher) {
+fn construct_tlsh2(bencher: Bencher) {
     let data = prepare_data();
 
     bencher.bench(|| {
@@ -105,9 +105,9 @@ fn hash_fast_tlsh(data_row: &DataRow) -> tlsh::Tlsh {
 }
 
 #[bench]
-fn build_fast_tlsh(bencher: Bencher) {
+fn construct_fast_tlsh(bencher: Bencher) {
     use tlsh::Tlsh;
-    
+
     let data = prepare_data();
 
     bencher.bench(|| {
@@ -152,12 +152,12 @@ fn hash_simbiota_tlsh(data_row: &DataRow) -> String {
     builder.update(data_row.s2.as_bytes());
 
     builder.finalize();
-    
+
     builder.get_hash().unwrap().to_digest()
 }
 
 #[bench]
-fn build_simbiota_tlsh(bencher: Bencher) {
+fn construct_simbiota_tlsh(bencher: Bencher) {
     let data = prepare_data();
 
     bencher.bench(|| {
