@@ -3,6 +3,10 @@
 This repository compares different TLSH algorithm implementations in Rust.
 Benchmark is run using 128bit - 1byte checksum hashes.
 
+There are two benchmarks:
+- `tlsh_construct_bench` - compares the performance of creating TLSH struct from data row
+- `tlsh_diff_bench` - compares the performance of calculating the difference of TLSH hashes
+
 ## Specification
 
 For more information about TLSH goto: https://tlsh.org/
