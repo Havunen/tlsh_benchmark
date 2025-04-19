@@ -60,3 +60,19 @@ impl DataRow {
         }
     }
 }
+
+pub fn prepare_data() -> Vec<DataRow> {
+    let file = std::fs::File::open("benches/data_rows.json").expect("Failed to open data_rows.json");
+    let data_rows: Vec<DataRow> = serde_json::from_reader(file).expect("Failed to deserialize data rows");
+    data_rows
+}
+
+#[allow(dead_code)]
+pub fn create_sample_data() {
+    let data_rows: Vec<DataRow> = (0..10000).map(|id| DataRow::new(id)).collect();
+
+    let file = std::fs::File::create("benches/data_rows.json").expect("Failed to create data_rows.json");
+    serde_json::to_writer(file, &data_rows).expect("Failed to serialize data rows");
+
+    println!("Created {} sample data rows", data_rows.len());
+}
