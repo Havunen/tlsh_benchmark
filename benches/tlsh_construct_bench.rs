@@ -1,5 +1,6 @@
 use crate::data_row::{prepare_data, DataRow};
 use divan::{bench, black_box, Bencher};
+use ssdeep::Generator;
 use tlsh_orig::{BucketKind, ChecksumKind};
 use tlsh_orig::Version::Version4;
 
@@ -215,6 +216,52 @@ fn construct_tlsh_orig(bencher: Bencher) {
         black_box({
             for data_row in &data {
                 hashes.push(hash_tlsh_orig(data_row));
+            }
+        });
+    });
+}
+
+fn hash_ffuzzy(data_row: &DataRow) -> String {
+    let mut builder = Generator::new();
+
+    builder.update(&data_row.id.to_ne_bytes());
+    builder.update(data_row.name.as_bytes());
+    builder.update(data_row.value.as_bytes());
+    builder.update(&data_row.d1.to_ne_bytes());
+    builder.update(&data_row.d2.to_ne_bytes());
+    builder.update(&data_row.d3.to_ne_bytes());
+    builder.update(&data_row.d4.to_ne_bytes());
+    builder.update(&data_row.d5.to_ne_bytes());
+    builder.update(&data_row.d6.to_ne_bytes());
+    builder.update(&data_row.d7.to_ne_bytes());
+    builder.update(&data_row.d8.to_ne_bytes());
+
+    builder.update(&data_row.f1.to_ne_bytes());
+    builder.update(&data_row.f2.to_ne_bytes());
+    builder.update(&data_row.f3.to_ne_bytes());
+    builder.update(&data_row.f4.to_ne_bytes());
+
+    builder.update(if data_row.b1 { &TRUE } else { &FALSE });
+    builder.update(if data_row.b2 { &TRUE } else { &FALSE });
+    builder.update(if data_row.b3 { &TRUE } else { &FALSE });
+    builder.update(if data_row.b4 { &TRUE } else { &FALSE });
+
+    builder.update(data_row.s1.as_bytes());
+    builder.update(data_row.s2.as_bytes());
+
+    builder.finalize().unwrap().to_string()
+}
+
+#[bench]
+fn construct_ffuzzy(bencher: Bencher) {
+    let data = prepare_data();
+
+    bencher.bench(|| {
+        let mut hashes: Vec<String> = Vec::with_capacity(data.len());
+
+        black_box({
+            for data_row in &data {
+                hashes.push(hash_ffuzzy(data_row));
             }
         });
     });

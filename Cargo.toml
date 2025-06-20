@@ -12,10 +12,20 @@ serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 divan = "0.1.21"
 
-fast-tlsh = "0.1.8"
+fast-tlsh = { version = "0.1.8" }
 tlsh2 = { version = "0.4.0", features = ["diff", "fast"] }
 simbiota-tlsh = "1.1.1"
 tlsh_orig = { git = "https://github.com/dkrisman/tlsh-rs", branch = "main", package = "tlsh" }
+ffuzzy = { version = "0.3.16", features = ["unsafe", "unchecked", "unstable"] }
+
+[build]
+rustflags = ["-C", "target-cpu=native"]
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
+panic = "abort"
 
 [[bench]]
 name = "tlsh_construct_bench"

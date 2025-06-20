@@ -1,7 +1,7 @@
-# TLSH Benchmark
+# Similarity hash Benchmark
 
-This repository compares different TLSH algorithm implementations in Rust.
-Benchmark is run using 128bit - 1byte checksum hashes.
+This repository was originally created to benchmark the performance of different implementations of TLSH (Trend Locality Sensitive Hashing) algorithms. TLSH is a locality-sensitive hashing algorithm that is used to compare the similarity of data, such as files or strings.
+Later, it was extended to include other similarity hash algorithms.
 
 There are two benchmarks:
 - `tlsh_construct_bench` - compares the performance of creating TLSH struct from data row
