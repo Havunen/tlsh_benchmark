@@ -498,9 +498,9 @@ source = "git+https://github.com/dkrisman/tlsh-rs?branch=main#2079d86b6a35bb399a
 
 [[package]]
 name = "tlsh2"
-version = "0.4.0"
+version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0d1ca7b6482798eaf06ef6a4a5e1211e370758888698cfff4a53142441ef5143"
+checksum = "96c92ccae5fece4be87f4fe90187d5bf20837e7a50f14c1f664b4a86c97ea3e0"
 
 [[package]]
 name = "tlsh_benchmark"
