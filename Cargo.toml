@@ -13,7 +13,7 @@ serde_json = "1"
 divan = "0.1.21"
 
 fast-tlsh = { version = "0.1.8" }
-tlsh2 = { version = "0.4.0", features = ["diff", "fast"] }
+tlsh2 = { version = "1.0.0", features = ["diff", "fast"] }
 simbiota-tlsh = "1.1.1"
 tlsh_orig = { git = "https://github.com/dkrisman/tlsh-rs", branch = "main", package = "tlsh" }
 ffuzzy = { version = "0.3.16", features = ["unsafe", "unchecked", "unstable"] }
